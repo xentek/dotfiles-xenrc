@@ -3,5 +3,5 @@ source = "[ -f ${HOME}/.xenrc.sh ] && source ${HOME}/.xenrc.sh"
 ['.localrc', '.zshrc', '.bashrc'].each do |file|
   next unless File.exist?(file) and File.writable?(file)
   next if File.read(file).include? source
-  File.open(file, 'a') { |f| f.puts ("# added by dotfiles-xenrc", source) }
+  File.open(file, "a") { |f| f.puts("", "# added by dotfiles-xenrc", source) }
 end
