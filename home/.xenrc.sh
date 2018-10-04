@@ -1,5 +1,5 @@
-if [[ -d "${HOME}/.xenrc" ]]; then
-  foreach file in $(command ls ${HOME}/.xenrc/*)
-    source $file
-  end
+if [ -d $HOME/.xenrc ]; then
+  for file in $HOME/.xenrc/*.rc; do
+    [ ! -d "$file" ] && source "$file"
+  done
 fi
